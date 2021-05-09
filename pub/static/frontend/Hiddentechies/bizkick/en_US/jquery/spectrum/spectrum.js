@@ -1,0 +1,1 @@
+/var/www/html/navkar/lib/web/jquery/spectrum/spectrum.js

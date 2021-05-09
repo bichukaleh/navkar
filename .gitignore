@@ -43,3 +43,14 @@
 /var/package/*
 !/var/package/*.xml
 
+/vendor/*
+/generated/
+.github/
+grunt-config.json.sample
+nginx.conf.sample
+package.json.sample
+Gruntfile.js.sample
+auth.json.sample
+.htaccess.sample
+.travis.yml.sample
+

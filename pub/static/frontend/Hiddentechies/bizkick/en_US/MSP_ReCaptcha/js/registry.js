@@ -1,0 +1,1 @@
+/var/www/html/navkar/vendor/msp/recaptcha/view/frontend/web/js/registry.js

@@ -1,0 +1,1 @@
+/var/www/html/navkar/app/code/WeltPixel/OwlCarouselSlider/view/frontend/web/js/owl.config.js

@@ -1,0 +1,36 @@
+<?php
+if(!$this->getEnabled()) return;
+$selector = 'alo-content-'.uniqid();
+$testimonials = $this->getTestimonials();
+if(!count($testimonials)) return;
+?>
+<div class="hb-wrapper above-padding below-padding above-margin below-margin">
+   <div class="page-main">
+      <div class="page-title-main"><strong>What Our Customer Says</strong></div>
+      <div class="hb-row">
+         <div class="hb-testimonoals">
+            <ul id="hb-testimonials">
+            	<?php foreach ($testimonials as $testimonial) :?>
+               <li style="display: none;">
+                  <div class="hb-inner">
+                     <div class="hb-content">
+                        <p><?php echo $this->escapeHtml($testimonial->getText()); ?></p>
+                     </div>
+                     <h4><?php echo $this->escapeHtml($testimonial->getName()); ?></h4>
+                     <div class="testimonial-rating">
+						<div class="rating-result">
+							<div class="field-summary_rating">
+								<span class="rating-box" style="display:block;">
+									<span style="display:block; width:<?php echo $testimonial->getData('rating_summary')*20; ?>%;" class="rating"></span>
+								</span>
+							</div>
+						</div>
+					</div>
+                  </div>
+               </li>
+               <?php endforeach ?>
+            </ul>
+         </div>
+      </div>
+   </div>
+</div>

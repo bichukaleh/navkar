@@ -1,0 +1,71 @@
+<?php
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Top menu for store
+ *
+ * @see \Magento\Theme\Block\Html\Topmenu
+ */
+?>
+<?php $columnsLimit = $block->getColumnsLimit() ? : 0; ?>
+<?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<?php
+$helper = $this->helper('Hiddentechies\Bizkick\Helper\Data');
+$baseUrl = $helper->getBaseUrl();
+$ishome = $helper->getIsHome();
+$showHome = $helper->getConfigValue('bizkicksettings/navigation_settings/enable');
+?>
+<nav class="navigation" role="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <?php if ($showHome) { ?>
+            <li class = "level0 level-top <?php if ($ishome) { ?> active <?php } ?>">
+                <a class = "level-top" href = "<?php echo $baseUrl; ?>">
+                    <?php echo __('Home');
+                    ?>
+                </a>
+            </li>
+        <?php } ?>
+        <?php /* @escapeNotVerified */ echo $_menu; ?>
+    </ul>
+</nav>
+<script type="text/javascript">
+        require(['jquery', 'bizkickowlcarousel'], function() {
+            jQuery(document).ready(function() {
+                jQuery(".home-slider").owlCarousel({
+                    items: 1,
+                    itemsDesktop: [1198, 1],
+                    itemsDesktopSmall: [1023, 1],
+                    itemsTablet: [768, 1],
+                    itemsTabletSmall: [767, 1],
+                    itemsMobile: [479, 1],
+                    pagination: true,
+                    navigationText: ["<div class='left-arrow'><i class='fa fa-angle-left'></i></div>", "<div class='right-arrow'><i class='fa fa-angle-right'></div>"],
+                    navigation: true,
+                });
+                jQuery(".home-slider li").show();
+            });
+        });
+    </script>
+    <script type="text/javascript" xml="space">
+                    require(['jquery', 'bizkickowlcarousel'], function() {
+                        jQuery(document).ready(function() {
+                            jQuery("#hb-testimonials").owlCarousel({
+                                items: 2,
+                                itemsDesktop: [1198, 2],
+                                itemsDesktopSmall: [1023, 2],
+                                itemsTablet: [768, 1],
+                                itemsTabletSmall: [767, 1],
+                                itemsMobile: [479, 1],
+                                pagination: false,
+                                navigationText: ["<div class='left-arrow'><i class='fa fa-angle-left'></i></div>", "<div class='right-arrow'><i class='fa fa-angle-right'></div>"],
+                                navigation: true,
+                            });
+                            jQuery("#hb-testimonials li").show();
+                        });
+                    });
+                </script>
